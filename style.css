@@ -32,7 +32,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -40,15 +40,21 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .item {
   flex: 1;
   margin: 10px;
+  padding: 20px;
 }
 
 .item-double {
-  flex: 2;
+  flex: 3 0 0;
+  margin: 10px;
+}
+.smallsize {
+  padding: 5px;
 }
 
 /* -------  Navigation ------- */
@@ -61,7 +67,7 @@ header {
 
 .logo {
   font-family: "Tangerine", cursive;
-  font-size: 72px;
+  font-size: 50px;
   color: #ecdbc9;
 }
 
@@ -80,12 +86,30 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
+.flex {
+  flex-direction: row;
+}
+
+#menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 /* -------  Join Form ------- */
 form {
   border: 2px solid #6b1a22;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
 }
 
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+}
 form label {
   font-weight: bold;
 }
@@ -93,9 +117,15 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  max-width: 180px;
+  margin-left: 8px;
 }
 
+button,
+select {
+  text-transform: none;
+  width: 100%;
+}
 form button {
   background-color: #83092e;
   border: none;
@@ -118,3 +148,76 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 480px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  main .item img {
+    display: flex;
+    flex-direction: column;
+  }
+  .change {
+    width: 50%;
+  }
+  header nav {
+    margin-top: 4px;
+  }
+  .join {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  body {
+    padding: 20px;
+  }
+  .logo {
+    font-size: 60px;
+  }
+  .smallsize {
+    width: 18%;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .stacked {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+  }
+  .smallersize {
+    width: 50%;
+  }
+  .sizeup {
+    max-width: 96%;
+    height: auto;
+    margin: auto;
+  }
+  #about p {
+    font-size: 26px;
+  }
+  #download {
+    font-size: 25px;
+  }
+  #download h2 {
+    font-size: 35px;
+  }
+  .side {
+    display: flex;
+    flex-direction: row;
+  }
+  #img2 {
+    max-width: 50%;
+    height: auto;
+  }
+  #blog p {
+    margin: 25px;
+  }
+  #blog h3 {
+    margin: 25px;
+  }
+}
